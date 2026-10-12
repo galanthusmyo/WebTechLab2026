@@ -205,3 +205,15 @@ console.log("map() creates a new array with transformed object values.");
 console.log("reduce() adds all values together into one final result.");
 console.log("Single-pass reduce checks each object once and adds only Tech prices.");
 console.log("for...of also checks each object once and adds only Tech prices without creating intermediate arrays.");
+
+// ------------------------------------------------------------------
+// Simple array proof of concept
+// ------------------------------------------------------------------
+
+const arrayBasicsDemo = ["apple", "banana", "orange"];
+console.log("\n=== Simple array example ===");
+console.log("First item (index 0):", arrayBasicsDemo[0]);
+console.log("Number of items:", arrayBasicsDemo.length);
+
+arrayBasicsDemo.push("pear");
+console.log("After adding pear:", arrayBasicsDemo);
