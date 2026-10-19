@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multi-source Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <p class="eyebrow">LESSON 01</p>
+    <h1>Multi-source Dashboard</h1>
+    <p class="intro">Load users and posts from two API endpoints at the same time.</p>
+    <div class="toolbar">
+      <button id="reload-button" type="button">Reload data</button>
+      <p id="status" role="status" aria-live="polite">Ready to load.</p>
+    </div>
+    <section class="cards" aria-label="Dashboard data">
+      <article class="card"><h2>Users</h2><p id="users-count" class="number">—</p><ul id="users-list"></ul></article>
+      <article class="card"><h2>Posts</h2><p id="posts-count" class="number">—</p><ul id="posts-list"></ul></article>
+    </section>
+    <p class="note">Tip: open DevTools → Network to watch the requests.</p>
+  </main>
+</body>
+</html>

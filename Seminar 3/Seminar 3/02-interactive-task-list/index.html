@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interactive Task List</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <p class="eyebrow">LESSON 02</p>
+    <h1>Interactive Task List</h1>
+    <p class="intro">Add tasks, mark them complete, and remove them.</p>
+    <form id="task-form">
+      <label class="sr-only" for="task-input">New task</label>
+      <input id="task-input" name="task" maxlength="120" placeholder="e.g. Learn event delegation" required>
+      <button type="submit">Add task</button>
+    </form>
+    <p id="task-status" role="status" aria-live="polite"></p>
+    <ul id="task-list" aria-label="Tasks"></ul>
+    <p class="note">Try adding text that looks like HTML. It should appear as text, not become an element.</p>
+  </main>
+</body>
+</html>

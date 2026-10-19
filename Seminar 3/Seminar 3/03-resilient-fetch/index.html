@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resilient Fetch</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <p class="eyebrow">LESSON 03</p>
+    <h1>Resilient Fetch</h1>
+    <p class="intro">Practice timeout, cancellation, retries, and backoff.</p>
+    <label for="endpoint">Endpoint</label>
+    <select id="endpoint">
+      <option value="success">Success (HTTP 200)</option>
+      <option value="server-error">Server error (HTTP 500)</option>
+      <option value="not-found">Not found (HTTP 404)</option>
+      <option value="slow">Slow response (timeout demo)</option>
+    </select>
+    <div class="buttons">
+      <button id="run-button" type="button">Run request</button>
+      <button id="cancel-button" type="button" class="secondary" disabled>Cancel</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">Ready.</p>
+    <pre id="result">The response will appear here.</pre>
+    <p class="note">The slow endpoint may behave differently depending on the network. Retry only makes sense for selected transient errors.</p>
+  </main>
+</body>
+</html>
