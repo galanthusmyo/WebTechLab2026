@@ -1,0 +1,37 @@
+$CATEGORY: Web Technologies/Tutorial 05/Checkpoint 1
+
+::T05-CP1-create-contract::A resource is successfully created. Which response combination best communicates that outcome? {
+=A created status, a Location header for the new resource, and its public representation #Correct. The status, navigation metadata, and body describe distinct parts of the outcome.
+~A success status used for every operation and the repository object without a wrapper #This erases creation semantics and couples the public API to repository shape.
+~A no-content status with a JSON body #A no-content response must not carry a representation.
+}
+
+::T05-CP1-boundary-validation::Why validate media type and exact body fields before calling the repository? {
+=Invalid transport input should be rejected at the HTTP boundary without causing domain state work #Correct. The router owns the public request contract.
+~The repository cannot store JavaScript objects #The issue is ownership of validation, not JavaScript object support.
+~Express automatically accepts only the documented fields #Parsed input still requires explicit contract validation.
+}
+
+::T05-CP1-delete-body::A successful `204 No Content` deletion response may include a JSON confirmation body if its content type is set correctly. {FALSE #Correct. A 204 response has no message body or representation content type.}
+
+$CATEGORY: Web Technologies/Tutorial 05/Checkpoint 2
+
+::T05-CP2-response-path::An Express handler returns without sending a response or calling next. What happens to the request? {
+=It can remain pending until the client stops waiting. #Correct. Returning from the function does not finish the HTTP response.
+~Express automatically sends a 404. #Incorrect. That requires forwarding to the next handler or sending a response explicitly.
+~The client receives an empty 200 immediately. #Incorrect. No response was completed.
+}
+
+::T05-CP2-status-class::An already accepted invitation produces an error body but a 200 status. Why is this a defect? {
+=The success status class tells clients the operation succeeded. #Correct. The status class and actual result must agree.
+~JSON error bodies are forbidden. #Incorrect. A consistent JSON error body is useful with an error status.
+~Only the spelling of the message matters. #Incorrect. Clients also use the status class to determine success or failure.
+}
+
+::T05-CP2-json-shape::Listing returns an object containing data, but detail returns a bare meeting. What should you check? {
+=Whether success responses follow the documented common JSON shape. #Correct. Clients should not have to guess which endpoint wraps its result.
+~Whether every response contains exactly the same meeting. #Incorrect. Consistent structure does not mean identical data.
+~Whether the client can ignore all response bodies. #Incorrect. It needs the returned representation.
+}
+
+::T05-CP2-ordering::Validating order=desc is sufficient to make the returned collection descending. {FALSE #Correct. The requested direction must also affect construction of the returned representation.}
